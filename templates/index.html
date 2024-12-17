@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake News Detection</h1>
+    <form method="POST" action="/">
+        <textarea name="news" rows="10" placeholder="Enter the news text here..."></textarea><br>
+        <button type="submit">Check</button>
+    </form>
+    
+    {% if news %}
+    <div class="result">
+        <h2>Prediction Result</h2>
+        <p><strong>News:</strong></p>
+        <p>{{ news }}</p>
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
